@@ -31,7 +31,8 @@
         <activity android:name=".view.activities.Parent.ParentPanelActivity" />
         <activity
             android:name=".view.activities.LoginActivity"
-            android:label="@string/title_activity_login" />
+            android:label="@string/title_activity_login"
+            android:windowSoftInputMode="stateVisible|adjustPan"/>
         <activity android:name=".view.activities.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

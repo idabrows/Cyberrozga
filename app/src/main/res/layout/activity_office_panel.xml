@@ -4,11 +4,12 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.activities.OfficePanelActivity">
+    tools:context=".view.activities.OfficePanelActivity"
+    android:background="@drawable/background">
 
     <TableLayout
-        android:layout_width="233dp"
-        android:layout_height="87dp"
+        android:layout_width="335dp"
+        android:layout_height="108dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -20,13 +21,13 @@
         app:layout_constraintVertical_bias="0.499">
 
         <TableRow
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="230dp"
+            android:layout_height="34dp">
 
             <Button
                 android:id="@+id/groupManagementButton"
-                android:layout_width="229dp"
-                android:layout_height="match_parent"
+                android:layout_width="331dp"
+                android:layout_height="83dp"
                 android:text="@string/groupsManagement"
                 tools:layout_editor_absoluteX="148dp"
                 tools:layout_editor_absoluteY="242dp" />
