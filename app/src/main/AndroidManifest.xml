@@ -21,7 +21,8 @@
         <activity android:name=".view.activities.GroupManagement" />
         <activity android:name=".view.activities.OfficePanelActivity" />
         <activity android:name=".view.activities.Teacher.TeacherInbox" />
-        <activity android:name=".view.activities.Teacher.MailToParents" />
+        <activity android:name=".view.activities.Teacher.MailToParents"
+            android:windowSoftInputMode="stateVisible|adjustPan"/>/>
         <activity android:name=".view.activities.RegisterActivity" />
         <activity android:name=".view.activities.Teacher.TeacherPanelActivity" />
         <activity android:name=".view.activities.Parent.ParentInbox" />
