@@ -23,7 +23,7 @@ public class Connector {
 
     public static String getString(){
         Connection conn=getConnection();
-        String s="xxx";
+        String s="x";
         try
         {
             //System.out.print(getConnection());
@@ -42,7 +42,6 @@ public class Connector {
                 int id = rs.getInt("id");
                 String firstName = rs.getString("mail");
                 s+=firstName;
-                //System.out.print(s);
                 String lastName = rs.getString("password");
                         // print the results
 
