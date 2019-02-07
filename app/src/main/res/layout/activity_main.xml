@@ -8,34 +8,34 @@
 
     <ImageView
         android:id="@+id/Header"
-        android:layout_width="354dp"
-        android:layout_height="130dp"
+        android:layout_width="365dp"
+        android:layout_height="799dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
+        android:background="@drawable/background"
         android:contentDescription="@string/app_name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.145"
+        app:layout_constraintVertical_bias="0.857"
         app:srcCompat="@drawable/cyberrozga" />
 
     <Button
         android:id="@+id/loginButton"
         style="@style/Base.Widget.AppCompat.Button.Borderless"
-        android:layout_width="406dp"
-        android:layout_height="729dp"
+        android:layout_width="371dp"
+        android:layout_height="598dp"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
         android:text="@string/tap"
         android:textAppearance="@style/TextAppearance.AppCompat.Caption"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </android.support.constraint.ConstraintLayout>

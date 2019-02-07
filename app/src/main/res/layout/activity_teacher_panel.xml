@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.activities.TeacherPanelActivity">
+    tools:context=".view.activities.Teacher.TeacherPanelActivity">
 
     <TableLayout
-        android:layout_width="231dp"
-        android:layout_height="389dp"
+        android:layout_width="324dp"
+        android:layout_height="349dp"
         android:layout_marginStart="8dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="8dp"
@@ -25,8 +25,8 @@
 
             <Button
                 android:id="@+id/registerButton"
-                android:layout_width="229dp"
-                android:layout_height="match_parent"
+                android:layout_width="265dp"
+                android:layout_height="69dp"
                 android:text="@string/register"
                 tools:layout_editor_absoluteX="148dp"
                 tools:layout_editor_absoluteY="242dp" />
@@ -39,8 +39,8 @@
 
             <Button
                 android:id="@+id/sendToParentsButton"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="338dp"
+                android:layout_height="76dp"
                 android:text="@string/sendToParents"
                 tools:layout_editor_absoluteX="98dp"
                 tools:layout_editor_absoluteY="394dp" />
@@ -53,7 +53,7 @@
             <Button
                 android:id="@+id/inboxTeacherButton"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_height="77dp"
                 android:text="@string/inbox"
                 tools:layout_editor_absoluteX="91dp"
                 tools:layout_editor_absoluteY="410dp" />

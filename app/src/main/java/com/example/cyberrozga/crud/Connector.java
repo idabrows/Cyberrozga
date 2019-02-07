@@ -1,17 +1,19 @@
 package com.example.cyberrozga.crud;
 
+import java.sql.Array;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 
 public class Connector {
     public static Connection getConnection(){
         Connection c=null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            c= DriverManager.getConnection("jdbc:mysql://192.168.43.140:3306/school","matt","");
+            c= DriverManager.getConnection("jdbc:mysql://192.168.1.4:3306/school","matt","");
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
@@ -21,9 +23,11 @@ public class Connector {
     }
 
 
-    public static String getString(){
+    public static ArrayList<String> getString(){
         Connection conn=getConnection();
-        String s="x";
+        ArrayList<String> strings = new ArrayList<>();
+        strings.add("");
+        String s="";
         try
         {
             //System.out.print(getConnection());
@@ -40,12 +44,17 @@ public class Connector {
             while (rs.next())
             {
                 int id = rs.getInt("id");
-                String firstName = rs.getString("mail");
-                s+=firstName;
-                String lastName = rs.getString("password");
+                String email = rs.getString("mail");
+                s+=email+":";
+                String password = rs.getString("password");
+                s+=password+":";
+                String type = rs.getString("type");
+                s+=type;
+                strings.add(s);
+                s="";
                         // print the results
 
-                        System.out.format("%s, %s, %s\n", id, firstName, lastName);
+                        System.out.format("%s, %s, %s\n", id, email, password);
             }
             st.close();
         }
@@ -54,10 +63,10 @@ public class Connector {
             System.err.println("Got an exception! ");
             System.err.println(e.getMessage());
         }
-        return s;
+        return strings;
     }
 
-    public static void main(String[] args) {
-        System.out.print(getString());
-    }
+ //   public static void main(String[] args) {
+ //       System.out.print(getString());
+ //   }
 }

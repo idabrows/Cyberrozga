@@ -40,6 +40,8 @@
     <string name="cancel">Anuluj</string>
     <string name="group">Grupa</string>
     <string name="studentname">Nazwisko ucznia</string>
+    <string name="mainpanel">Cyberrózga - panel główny</string>
+
 
     <string-array name="marks_array">
         <item>1</item>

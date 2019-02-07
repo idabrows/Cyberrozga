@@ -77,10 +77,4 @@
         </LinearLayout>
     </ScrollView>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="292dp"
-        android:layout_height="211dp"
-        android:text="TextView" />
-
 </LinearLayout>

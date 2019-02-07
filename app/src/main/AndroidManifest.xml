@@ -20,15 +20,15 @@
             android:theme="@style/AppTheme.NoActionBar"></activity>
         <activity android:name=".view.activities.GroupManagement" />
         <activity android:name=".view.activities.OfficePanelActivity" />
-        <activity android:name=".view.activities.TeacherInbox" />
-        <activity android:name=".view.activities.MailToParents" />
+        <activity android:name=".view.activities.Teacher.TeacherInbox" />
+        <activity android:name=".view.activities.Teacher.MailToParents" />
         <activity android:name=".view.activities.RegisterActivity" />
-        <activity android:name=".view.activities.TeacherPanelActivity" />
-        <activity android:name=".view.activities.ParentInbox" />
-        <activity android:name=".view.activities.MailToTeacher" />
+        <activity android:name=".view.activities.Teacher.TeacherPanelActivity" />
+        <activity android:name=".view.activities.Parent.ParentInbox" />
+        <activity android:name=".view.activities.Parent.MailToTeacher" />
         <activity android:name=".view.activities.ChildrenPanelActivity" />
         <activity android:name=".view.activities.StudentPanelActivity" />
-        <activity android:name=".view.activities.ParentPanelActivity" />
+        <activity android:name=".view.activities.Parent.ParentPanelActivity" />
         <activity
             android:name=".view.activities.LoginActivity"
             android:label="@string/title_activity_login" />
