@@ -1,9 +1,8 @@
-package com.example.cyberrozga.view.activities;
+package com.example.cyberrozga.view.activities.teacher;
 
 import android.app.Activity;
 import android.os.Bundle;
 import android.util.DisplayMetrics;
-import android.view.Display;
 
 import com.example.cyberrozga.R;
 

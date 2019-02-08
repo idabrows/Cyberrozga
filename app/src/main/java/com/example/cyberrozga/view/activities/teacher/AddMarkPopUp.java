@@ -1,4 +1,4 @@
-package com.example.cyberrozga.view.activities;
+package com.example.cyberrozga.view.activities.teacher;
 
 import android.app.Activity;
 import android.os.Bundle;

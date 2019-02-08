@@ -1,4 +1,4 @@
-package com.example.cyberrozga.view.activities.Teacher;
+package com.example.cyberrozga.view.activities.teacher;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -7,7 +7,8 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.cyberrozga.R;
-import com.example.cyberrozga.view.activities.RegisterActivity;
+
+import java.util.Objects;
 
 public class TeacherPanelActivity extends AppCompatActivity {
 
@@ -16,7 +17,7 @@ public class TeacherPanelActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_panel);
      //   getActionBar().setTitle("Hello world App");
-        getSupportActionBar().setTitle("Cyberrózga - panel główny");  // provide compatibility to all the versions
+        Objects.requireNonNull(getSupportActionBar()).setTitle("Cyberrózga - panel główny");  // provide compatibility to all the versions
 
 
         Button register = (Button) findViewById(R.id.registerButton);

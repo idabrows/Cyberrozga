@@ -3,19 +3,20 @@ package com.example.cyberrozga.domain.users;
 import java.util.List;
 
 public class Parent {
-    List<Pupil> children;
+    private List<Pupil> children;
     private String email;
     private String password;
     private String firstName;
     private String lastName;
 
-    public Parent(List<Pupil> children, String email, String password, String firstName, String lastName) {
-        this.children = children;
-        this.email = email;
-        this.password = password;
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public  Parent(List<Pupil> children,String email, String password, String firstName, String lastName){
+        this.children=children;
+        this.email=email;
+        this.password=password;
+        this.firstName=firstName;
+        this.lastName=lastName;
     }
+
 
     public List<Pupil> getChildren() {
         return children;

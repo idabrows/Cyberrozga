@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".view.activities.OfficePanelActivity"
+    tools:context=".view.activities.officeWorker.OfficePanelActivity"
     android:background="@drawable/backgroundlight">
 
     <TableLayout

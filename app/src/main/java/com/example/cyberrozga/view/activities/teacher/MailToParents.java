@@ -1,11 +1,7 @@
-package com.example.cyberrozga.view.activities.Teacher;
+package com.example.cyberrozga.view.activities.teacher;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.text.method.ScrollingMovementMethod;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.TextView;
 
 import com.example.cyberrozga.R;
 

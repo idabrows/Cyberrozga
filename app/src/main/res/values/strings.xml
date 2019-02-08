@@ -20,6 +20,7 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
     <string name="choose">Wybierz</string>
+    <string name="chooseChild">Wybierz dziecko</string>
     <string name="tap">Dotknij aby rozpocząć</string>
     <string name="inbox">Skrzynka odbiorcza</string>
     <string name="sendToParents">Wyślij wiadomość do rodziców</string>
@@ -31,7 +32,7 @@
     <string name="mark4">4</string>
     <string name="mark5">5</string>
     <string name="mark6">6</string>
-    <string name="ok">Ok</string>
+    <string name="ok">OK</string>
     <string name="groupsManagement">Zarządzanie grupami</string>
     <string name="writeamessage">Napisz wiadomość</string>
     <string name="subject">Przedmiot</string>

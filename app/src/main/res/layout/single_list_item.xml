@@ -11,7 +11,8 @@
         <ImageView
             android:id="@+id/userImg"
             android:layout_width="60dp"
-            android:layout_height="60dp" />
+            android:layout_height="60dp"
+            android:contentDescription="TODO" />
 
         <TextView
             android:id="@+id/pNametxt"

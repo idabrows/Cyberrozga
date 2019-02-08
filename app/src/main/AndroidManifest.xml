@@ -13,23 +13,24 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme"
+        android:fullBackupContent="@xml/backup_descriptor">
         <activity
             android:name=".view.activities.Mails"
             android:label="@string/title_activity_mails"
             android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".view.activities.GroupManagement" />
-        <activity android:name=".view.activities.OfficePanelActivity" />
-        <activity android:name=".view.activities.Teacher.TeacherInbox" />
-        <activity android:name=".view.activities.Teacher.MailToParents"
-            android:windowSoftInputMode="stateVisible|adjustPan"/>/>
-        <activity android:name=".view.activities.RegisterActivity" />
-        <activity android:name=".view.activities.Teacher.TeacherPanelActivity" />
-        <activity android:name=".view.activities.Parent.ParentInbox" />
-        <activity android:name=".view.activities.Parent.MailToTeacher" />
-        <activity android:name=".view.activities.ChildrenPanelActivity" />
-        <activity android:name=".view.activities.StudentPanelActivity" />
-        <activity android:name=".view.activities.Parent.ParentPanelActivity" />
+        <activity android:name=".view.activities.officeWorker.GroupManagement" />
+        <activity android:name=".view.activities.officeWorker.OfficePanelActivity" />
+        <activity android:name=".view.activities.teacher.TeacherInbox" />
+        <activity android:name=".view.activities.teacher.MailToParents"
+            android:windowSoftInputMode="stateVisible|adjustPan"/>
+        <activity android:name=".view.activities.teacher.RegisterActivity" />
+        <activity android:name=".view.activities.teacher.TeacherPanelActivity" />
+        <activity android:name=".view.activities.parent.ParentInbox" />
+        <activity android:name=".view.activities.parent.MailToTeacher" />
+        <activity android:name=".view.activities.parent.ChildrenPanelActivity" />
+        <activity android:name=".view.activities.pupil.StudentPanelActivity" />
+        <activity android:name=".view.activities.parent.ParentPanelActivity" />
         <activity
             android:name=".view.activities.LoginActivity"
             android:label="@string/title_activity_login"
@@ -42,7 +43,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".view.activities.EditMarkPopUp"
+            android:name=".view.activities.teacher.EditMarkPopUp"
             android:theme="@style/AppTheme.CustomTheme" />
     </application>
 

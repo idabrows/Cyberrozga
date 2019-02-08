@@ -1,4 +1,4 @@
-package com.example.cyberrozga.view.activities;
+package com.example.cyberrozga.view.activities.teacher;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;

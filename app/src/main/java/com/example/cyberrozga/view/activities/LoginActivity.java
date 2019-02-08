@@ -4,7 +4,6 @@ import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
 import android.content.Intent;
-import android.content.pm.PackageManager;
 import android.os.StrictMode;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
@@ -32,8 +31,10 @@ import android.widget.TextView;
 
 import com.example.cyberrozga.R;
 import com.example.cyberrozga.crud.Connector;
-import com.example.cyberrozga.view.activities.Parent.ParentPanelActivity;
-import com.example.cyberrozga.view.activities.Teacher.TeacherPanelActivity;
+import com.example.cyberrozga.view.activities.officeWorker.OfficePanelActivity;
+import com.example.cyberrozga.view.activities.parent.ParentPanelActivity;
+import com.example.cyberrozga.view.activities.pupil.StudentPanelActivity;
+import com.example.cyberrozga.view.activities.teacher.TeacherPanelActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -111,8 +112,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions,
                                            @NonNull int[] grantResults) {
         if (requestCode == REQUEST_READ_CONTACTS) {
-            if (grantResults.length == 1 && grantResults[0] == PackageManager.PERMISSION_GRANTED) {
-            }
         }
     }
 
@@ -165,11 +164,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
     private boolean isEmailValid(String email) {
         //TODO: Replace this with your own logic
         return email.contains("@");
-    }
-
-    private boolean isPasswordValid(String password) {
-        //TODO: Replace this with your own logic
-        return true;
     }
 
     /**
@@ -259,14 +253,13 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         };
 
         int ADDRESS = 0;
-        int IS_PRIMARY = 1;
     }
 
     /**
      * Represents an asynchronous login/registration task used to authenticate
      * the user.
      */
-    public class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
+    class UserLoginTask extends AsyncTask<Void, Void, Boolean> {
 
         private final String mEmail;
         private final String mPassword;

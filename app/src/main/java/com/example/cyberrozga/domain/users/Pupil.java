@@ -15,6 +15,10 @@ public class Pupil {
     private String email;
     private String password;
 
+    public String getFirstName() {
+        return firstName;
+    }
+
     public Pupil(String firstName, String lastName, List<Grade> grades, SchoolClass sclass, List<Subject> subjects, String email, String password) {
         this.firstName = firstName;
         this.lastName = lastName;
@@ -23,10 +27,6 @@ public class Pupil {
         this.subjects = subjects;
         this.email = email;
         this.password = password;
-    }
-
-    public String getFirstName() {
-        return firstName;
     }
 
     public void setFirstName(String firstName) {
@@ -79,5 +79,10 @@ public class Pupil {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Override
+    public String toString(){
+        return firstName+" "+lastName;
     }
 }

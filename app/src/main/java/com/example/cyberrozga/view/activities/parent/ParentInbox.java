@@ -1,4 +1,4 @@
-package com.example.cyberrozga.view.activities.Parent;
+package com.example.cyberrozga.view.activities.parent;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
