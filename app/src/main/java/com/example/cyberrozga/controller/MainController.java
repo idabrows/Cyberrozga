@@ -62,4 +62,13 @@ public class MainController implements MainControllerService{
         return grades;
     }
 
+    public ArrayList<SchoolClass> getListOfClasses(Teacher teacher){
+        ArrayList<SchoolClass> classes = new ArrayList<>();
+
+        for (int i = 1; i <= 8; i++) {
+            classes.add(new SchoolClass(i,"A",null ));
+        }
+        return classes;
+    }
+
 }

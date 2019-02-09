@@ -73,7 +73,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
 
-        TextView textView = (TextView) findViewById(R.id.textView);
+    //    TextView textView = (TextView) findViewById(R.id.textView);
     //    textView.setText(Connector.getString().get(0), TextView.BufferType.EDITABLE);
 
         // Set up the login form.
@@ -306,7 +306,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 switch(mType){
                     case "teacher":intent = new Intent(getApplicationContext(), TeacherPanelActivity.class);
                         break;
-                    case "pupil":intent = new Intent(getApplicationContext(), StudentPanelActivity.class);
+                    case "student":intent = new Intent(getApplicationContext(), StudentPanelActivity.class);
                         break;
                     case "parent":intent = new Intent(getApplicationContext(), ParentPanelActivity.class);
                         break;

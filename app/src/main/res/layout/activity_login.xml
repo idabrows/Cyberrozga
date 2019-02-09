@@ -14,6 +14,10 @@
 
     <!-- Login progress -->
 
+    <TableRow
+        android:layout_width="232dp"
+        android:layout_height="152dp" />
+
     <ProgressBar
         android:id="@+id/login_progress"
         style="?android:attr/progressBarStyleLarge"

@@ -24,11 +24,8 @@ public class ChildrenPanelActivity extends AppCompatActivity {
 
         list = (ListView) findViewById(R.id.listView1);
 
-
         ArrayList<Pupil> carL = controller.getListOfStudents(null);
-
         adapter = new ArrayAdapter<Pupil>(this, R.layout.row, carL);
-
         list.setAdapter(adapter);
     }
 

@@ -44,6 +44,7 @@
     <string name="mainpanel">Cyberrózga - panel główny</string>
     <string name="typeText">Wpisz tekst</string>
     <string name="class1">Klasa</string>
+    <string name="from">Od:</string>
 
 
     <string-array name="marks_array">

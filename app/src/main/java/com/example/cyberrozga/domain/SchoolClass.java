@@ -10,4 +10,15 @@ public class SchoolClass {
     private String division;
     private List<Pupil> students;
 
+    public SchoolClass(int number,String division,List<Pupil> students){
+        this.number=number;
+        this.division=division;
+        this.students=students;
+    }
+
+    @Override
+    public String toString(){
+        return Integer.toString(this.number)+this.division;
+    }
+
 }

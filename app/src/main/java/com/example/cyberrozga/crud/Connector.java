@@ -1,5 +1,7 @@
 package com.example.cyberrozga.crud;
 
+import com.example.cyberrozga.settings.DBConfig;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -12,7 +14,7 @@ public class Connector {
         Connection c=null;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            c= DriverManager.getConnection("jdbc:mysql://192.168.1.4:3306/school","matt","");
+            c= DriverManager.getConnection("jdbc:mysql:"+ DBConfig.myURL,DBConfig.myLogin,DBConfig.myPassword);
         } catch (ClassNotFoundException e) {
             e.printStackTrace();
         } catch (SQLException e) {
@@ -43,11 +45,11 @@ public class Connector {
             while (rs.next())
             {
                 int id = rs.getInt("id");
-                String email = rs.getString("mail");
+                String email = rs.getString("email");
                 s.append(email).append(":");
                 String password = rs.getString("password");
                 s.append(password).append(":");
-                String type = rs.getString("type");
+                String type = rs.getString("position");
                 s.append(type);
                 strings.add(s.toString());
                 s = new StringBuilder();

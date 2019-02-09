@@ -29,7 +29,7 @@
             android:layout_marginTop="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginBottom="0dp"
-            android:text="@string/subject"
+            android:text="@string/class1"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.111"
@@ -38,7 +38,7 @@
             app:layout_constraintVertical_bias="0.094" />
 
         <Spinner
-            android:id="@+id/subjectSpinner"
+            android:id="@+id/classSpinner"
             android:layout_width="351dp"
             android:layout_height="43dp"
             android:layout_marginStart="8dp"
