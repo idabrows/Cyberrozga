@@ -38,6 +38,7 @@ public class SubjectsActivity extends AppCompatActivity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener(){
             @Override
             public void onItemClick(AdapterView<?> adapter, View v, int position, long l){
+
                 Subject item = (Subject) adapter.getItemAtPosition(position);
                 final Bundle subjectbundle = new Bundle();
                 subjectbundle.putSerializable("SUBJECT_DATA", item);

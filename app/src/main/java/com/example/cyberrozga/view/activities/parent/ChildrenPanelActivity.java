@@ -45,7 +45,6 @@ public class ChildrenPanelActivity extends AppCompatActivity {
                 Pupil item = (Pupil) adapter.getItemAtPosition(position);
                 final Bundle childbundle = new Bundle();
                 childbundle.putSerializable("CHILD_DATA", item);
-
                 Intent intent = new Intent(ChildrenPanelActivity.this, SubjectsActivity.class);
                 intent.putExtras(childbundle);
                 startActivity(intent);

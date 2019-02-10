@@ -30,6 +30,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.example.cyberrozga.R;
+import com.example.cyberrozga.controller.LoginController;
 import com.example.cyberrozga.crud.Connector;
 import com.example.cyberrozga.domain.users.Parent;
 import com.example.cyberrozga.domain.users.Pupil;
@@ -269,6 +270,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         private final String mEmail;
         private final String mPassword;
         private String mType=null;
+        private int mId;
 
         UserLoginTask(String email, String password) {
             mEmail = email;
@@ -280,20 +282,22 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
             connected=true;
             // TODO: attempt authentication against a network service.
 
-            try {
-                // Simulate network access.
-                Thread.sleep(2000);
-            } catch (InterruptedException e) {
-                return false;
-            }
+//            try {
+//                // Simulate network access.
+//                Thread.sleep(2000);
+//            } catch (InterruptedException e) {
+//                return false;
+//            }
 
             try {
-                for (String credential : Connector.getString()) {
+                for (String credential : LoginController.getString()) {
                     String[] pieces = credential.split(":");
                     if (pieces[0].equals(mEmail)) {
                         // Account exists, return true if the password matches.
                         if(pieces[1].equals(mPassword)){
                             mType=pieces[2];
+                            mId= Integer.parseInt(pieces[3]);
+                            System.out.print(mType);
                             return true;
                         }
                     }
@@ -317,34 +321,37 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 Intent intent;
                 switch(mType){
                     case "teacher":
-                        Teacher teacher = new Teacher(null, mEmail, null,null,null,null);
+                        Teacher teacher = new Teacher(mId,null, mEmail, null,null,null,null);
+                        boolean hasChildren=false;
                         intent = new Intent(getApplicationContext(), TeacherPanelActivity.class);
                         Bundle teacherbundle = new Bundle();
                         teacherbundle.putSerializable("TEACHER_DATA", teacher);
+                        teacherbundle.putBoolean("HAS_CHILDREN",false);
                         intent.putExtras(teacherbundle);
                         break;
                     case "student":
-                        Pupil pupil = new Pupil(null, null, null,null,null,mEmail,null);
+                        Pupil pupil = new Pupil(mId,null, null, null,null,null,mEmail,null);
                         intent = new Intent(getApplicationContext(), StudentPanelActivity.class);
                         Bundle pupilbundle = new Bundle();
                         pupilbundle.putSerializable("PUPIL_DATA", pupil);
                         intent.putExtras(pupilbundle);
                         break;
                     case "parent":intent = new Intent(getApplicationContext(), ParentPanelActivity.class);
-                        Parent parent = new Parent(null, mEmail, null,"PAAAAAREEEENT",null);
+                        Parent parent = new Parent(mId,null, mEmail, null,"PAAAAAREEEENT",null);
                         intent = new Intent(getApplicationContext(), ParentPanelActivity.class);
                         Bundle parentbundle = new Bundle();
                         parentbundle.putSerializable("PARENT_DATA", parent);
                         intent.putExtras(parentbundle);
                         break;
                     case "office worker":intent = new Intent(getApplicationContext(), OfficePanelActivity.class);
-                        Secretary secretary = new Secretary(null, mEmail, null,null,null,null);
+                        Secretary secretary = new Secretary(mId,null, mEmail, null,null,null,null);
                         intent = new Intent(getApplicationContext(), OfficePanelActivity.class);
                         Bundle secretarybundle = new Bundle();
                         secretarybundle.putSerializable("SECRETARY_DATA", secretary);
                         intent.putExtras(secretarybundle);
                         break;
-                    default:intent=new Intent(getApplicationContext(), StudentPanelActivity.class);
+                        //error activity should be
+                    default:intent=new Intent(getApplicationContext(), ParentPanelActivity.class);
 
                 }
                 LoginActivity.this.startActivity(intent);

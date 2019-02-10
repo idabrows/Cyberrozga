@@ -1,6 +1,7 @@
 package com.example.cyberrozga.controller;
 
 import com.example.cyberrozga.domain.Grade;
+import com.example.cyberrozga.domain.RegisterPage;
 import com.example.cyberrozga.domain.SchoolClass;
 import com.example.cyberrozga.domain.Subject;
 import com.example.cyberrozga.domain.users.Parent;
@@ -15,5 +16,6 @@ public interface MainControllerService {
     public ArrayList<Subject> getListOfSubjects(Pupil pupil);
     public ArrayList<Grade> getListOfGrades(Pupil pupil, Subject subject);
     public ArrayList<SchoolClass> getListOfClasses(Teacher teacher);
+    public ArrayList<RegisterPage> getListOfSubjects(Teacher teacher);
 
 }

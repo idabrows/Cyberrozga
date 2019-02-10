@@ -7,27 +7,22 @@ import com.example.cyberrozga.domain.Subject;
 import java.io.Serializable;
 import java.util.List;
 
-public class Pupil implements Serializable {
-    private String firstName;
-    private String lastName;
+import java.util.List;
+
+public class Pupil extends User  implements Serializable{
     private List<Grade> grades;
     private SchoolClass sclass;
     private List<Subject> subjects;
-    private String email;
-    private String password;
 
     public String getFirstName() {
         return firstName;
     }
 
-    public Pupil(String firstName, String lastName, List<Grade> grades, SchoolClass sclass, List<Subject> subjects, String email, String password) {
-        this.firstName = firstName;
-        this.lastName = lastName;
+    public Pupil(int id,String firstName, String lastName, List<Grade> grades, SchoolClass sclass, List<Subject> subjects, String email, String password) {
+        super(id,firstName,lastName,email,password);
         this.grades = grades;
         this.sclass = sclass;
         this.subjects = subjects;
-        this.email = email;
-        this.password = password;
     }
 
     public void setFirstName(String firstName) {
