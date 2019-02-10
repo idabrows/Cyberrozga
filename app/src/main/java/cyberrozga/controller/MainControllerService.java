@@ -11,12 +11,14 @@ import com.example.cyberrozga.domain.users.Pupil;
 import com.example.cyberrozga.domain.users.Teacher;
 
 import java.util.ArrayList;
+import java.util.Map;
 
 public interface MainControllerService {
     public ArrayList<Parent> getListOfParents(Pupil student);
     public ArrayList<Pupil> getListOfStudents(Parent parent);
     public ArrayList<Subject> getListOfSubjects(Pupil pupil);
     public ArrayList<Grade> getListOfGrades(Pupil pupil, Subject subject);
-    public ArrayList<SchoolClass> getListOfClasses(Teacher teacher);
-
+    public Map<SchoolClass,Subject> getListOfClassesAndSubjects(Teacher teacher);
+    public boolean isAParent(Teacher t);
+    public void addGrade(Grade grade);
 }

@@ -4,12 +4,13 @@ import com.example.cyberrozga.crud.Connector;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
 public class LoginController {
 
-    public static ArrayList<String> getString(){
+    public static ArrayList<String> getString() throws SQLException, ClassNotFoundException {
         Connection conn= Connector.getConnection();
         ArrayList<String> strings = new ArrayList<>();
         strings.add("");
