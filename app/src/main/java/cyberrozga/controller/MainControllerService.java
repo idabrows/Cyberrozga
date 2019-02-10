@@ -21,4 +21,7 @@ public interface MainControllerService {
     public Map<SchoolClass,Subject> getListOfClassesAndSubjects(Teacher teacher);
     public boolean isAParent(Teacher t);
     public void addGrade(Grade grade);
+    public void deleteGrade(Grade grade);
+    public void updateGrade(Grade oldG,Grade newG);
+
 }

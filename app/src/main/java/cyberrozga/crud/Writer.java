@@ -39,5 +39,56 @@ public class Writer {
         }
     }
 
+    public void deleteGrade(Grade grade){
+        Connection conn= null;
+        try {
+            conn = Connector.getConnection();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try
+        {
+            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd ");
+            String query = "DELETE FROM `grades` WHERE id="+grade.getId();
+            Statement st = conn.createStatement();
+            st.executeUpdate(query);
+            st.close();
+        }
+        catch (Exception e)
+        {
+            System.err.println("Got an exception! ");
+            System.err.println(e.getMessage());
+        }
+    }
+
+    public void updateGrade(Grade oldG, Grade newG){
+        Connection conn= null;
+        try {
+            conn = Connector.getConnection();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try
+        {
+            DateFormat dateFormat = new SimpleDateFormat("yyyy/MM/dd ");
+            String query = "UPDATE `grades` SET `grade`="+newG.getValue()+", `weight`= '"+newG.getWeight()+"' , `Date`='"+
+                    dateFormat.format(newG.getDate())+"' WHERE id="+oldG.getId();
+            Statement st = conn.createStatement();
+            st.executeUpdate(query);
+            st.close();
+        }
+        catch (Exception e)
+        {
+            System.err.println("Got an exception! ");
+            System.err.println(e.getMessage());
+        }
+    }
+
+
+
 
 }

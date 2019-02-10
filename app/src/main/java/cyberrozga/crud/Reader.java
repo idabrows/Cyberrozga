@@ -111,10 +111,11 @@ public class Reader {
             ResultSet rs = st.executeQuery(query);
             while (rs.next())
             {
+                int id=rs.getInt("id");
                 int grade=rs.getInt("grade");
                 String weight=rs.getString("weight");
                 Date date=rs.getDate("date");
-                grades.add(new Grade(pupil,grade,subject,pupil.getSclass(),date,weight));
+                grades.add(new Grade(id,pupil,grade,subject,pupil.getSclass(),date,weight));
             }
             st.close();
         }

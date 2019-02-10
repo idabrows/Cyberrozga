@@ -23,7 +23,7 @@ public class Grade {
         this.weight=weight;
     }
 
-    public Grade(Pupil student, int value, Subject subject, SchoolClass sclass, Date date, String weight,int id){
+    public Grade(int id,Pupil student, int value, Subject subject, SchoolClass sclass, Date date, String weight){
         this.student=student;
         this.value=value;
         this.subject=subject;

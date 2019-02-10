@@ -69,6 +69,14 @@ public class MainController implements MainControllerService {
         writer.addGrade(grade);
     }
 
+    public void deleteGrade(Grade grade){
+        writer.deleteGrade(grade);
+    }
+
+    public void updateGrade(Grade oldG, Grade newG){
+        writer.updateGrade(oldG,newG);
+    }
+
 
     public static void main(String[] args) {
 //        System.out.println(getInstance().getListOfStudents(new Parent(37,null,null,null,null,null)));
@@ -79,6 +87,9 @@ public class MainController implements MainControllerService {
 //        System.out.println(getInstance().getListOfStudents(new SchoolClass("1a",null)));
 //        getInstance().addGrade(new Grade(new Pupil(1,null,null,null,null,null,null,null),
 //                5,new Subject("Matematyka",1),null, "krtk"));
+//        getInstance().deleteGrade(new Grade(122,null,0,null,null,null,null));
+//         getInstance().updateGrade(new Grade(120,null,0,null,null,null,null),
+//                 new Grade(null, 6,null,null,"krtk"));
 
     }
 
