@@ -1,4 +1,4 @@
-package com.example.cyberrozga.domain;
+package  com.example.cyberrozga.domain;
 
 import com.example.cyberrozga.domain.users.Pupil;
 

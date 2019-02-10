@@ -1,31 +1,16 @@
-package com.example.cyberrozga.crud;
+package com.example.cyberrozga.controller;
 
-import com.example.cyberrozga.settings.DBConfig;
+import com.example.cyberrozga.crud.Connector;
 
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class Connector {
-    private static Connection getConnection(){
-        Connection c=null;
-        try {
-            Class.forName("com.mysql.jdbc.Driver");
-            c= DriverManager.getConnection("jdbc:mysql:"+ DBConfig.myURL,DBConfig.myLogin,DBConfig.myPassword);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
-        return c;
-    }
-
+public class LoginController {
 
     public static ArrayList<String> getString(){
-        Connection conn=getConnection();
+        Connection conn= Connector.getConnection();
         ArrayList<String> strings = new ArrayList<>();
         strings.add("");
         StringBuilder s= new StringBuilder();
@@ -51,11 +36,9 @@ public class Connector {
                 s.append(password).append(":");
                 String type = rs.getString("position");
                 s.append(type);
+                s.append(id);
                 strings.add(s.toString());
                 s = new StringBuilder();
-                        // print the results
-
-                        System.out.format("%s, %s, %s\n", id, email, password);
             }
             st.close();
         }
@@ -67,7 +50,5 @@ public class Connector {
         return strings;
     }
 
- //   public static void main(String[] args) {
- //       System.out.print(getString());
- //   }
+
 }

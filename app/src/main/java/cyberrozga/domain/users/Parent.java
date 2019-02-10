@@ -1,20 +1,20 @@
 package com.example.cyberrozga.domain.users;
 
+import com.example.cyberrozga.domain.users.Pupil;
+import com.example.cyberrozga.domain.users.User;
+
 import java.util.List;
 
-public class Parent {
+public class Parent extends User {
     private List<Pupil> children;
     private String email;
     private String password;
     private String firstName;
     private String lastName;
 
-    public  Parent(List<Pupil> children,String email, String password, String firstName, String lastName){
+    public  Parent(int id,List<Pupil> children,String email, String password, String firstName, String lastName){
+        super(id,firstName,lastName,email,password);
         this.children=children;
-        this.email=email;
-        this.password=password;
-        this.firstName=firstName;
-        this.lastName=lastName;
     }
 
 
