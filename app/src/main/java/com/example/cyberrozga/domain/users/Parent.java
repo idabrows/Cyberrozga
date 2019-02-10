@@ -1,8 +1,9 @@
 package com.example.cyberrozga.domain.users;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Parent {
+public class Parent implements Serializable {
     private List<Pupil> children;
     private String email;
     private String password;
@@ -16,6 +17,7 @@ public class Parent {
         this.firstName=firstName;
         this.lastName=lastName;
     }
+
 
 
     public List<Pupil> getChildren() {

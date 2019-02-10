@@ -23,7 +23,8 @@ public class Grade {
 
     @Override
     public String toString(){
-        return value+" "+date;
+        //return value+" "+date;
+        return subject+" kryjana"+ student+" "+value;
     }
 
 }

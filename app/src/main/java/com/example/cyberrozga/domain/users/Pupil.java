@@ -4,9 +4,10 @@ import com.example.cyberrozga.domain.Grade;
 import com.example.cyberrozga.domain.SchoolClass;
 import com.example.cyberrozga.domain.Subject;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Pupil {
+public class Pupil implements Serializable {
     private String firstName;
     private String lastName;
     private List<Grade> grades;

@@ -48,7 +48,7 @@ public class MainController implements MainControllerService{
         ArrayList<Subject> subjects = new ArrayList<>();
 
         for (int i = 1; i <= 8; i++) {
-            subjects.add(new Subject("Polski",true));
+            subjects.add(new Subject("Polski kryjana "+pupil.toString(),true));
         }
         return subjects;
     }
@@ -57,7 +57,7 @@ public class MainController implements MainControllerService{
         ArrayList<Grade> grades = new ArrayList<>();
 
         for (int i = 1; i <= 8; i++) {
-            grades.add(new Grade(null,3,null,null,null,1) );
+            grades.add(new Grade(pupil,3,subject,null,null,1) );
         }
         return grades;
     }

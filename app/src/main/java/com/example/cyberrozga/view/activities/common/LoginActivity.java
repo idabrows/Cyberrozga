@@ -1,4 +1,4 @@
-package com.example.cyberrozga.view.activities;
+package com.example.cyberrozga.view.activities.common;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
@@ -31,11 +31,16 @@ import android.widget.TextView;
 
 import com.example.cyberrozga.R;
 import com.example.cyberrozga.crud.Connector;
+import com.example.cyberrozga.domain.users.Parent;
+import com.example.cyberrozga.domain.users.Pupil;
+import com.example.cyberrozga.domain.users.Secretary;
+import com.example.cyberrozga.domain.users.Teacher;
 import com.example.cyberrozga.view.activities.officeWorker.OfficePanelActivity;
 import com.example.cyberrozga.view.activities.parent.ParentPanelActivity;
 import com.example.cyberrozga.view.activities.pupil.StudentPanelActivity;
 import com.example.cyberrozga.view.activities.teacher.TeacherPanelActivity;
 
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -48,7 +53,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
      * Id to identity READ_CONTACTS permission request.
      */
     private static final int REQUEST_READ_CONTACTS = 0;
-
+    private boolean connected=true;
     /**
      * A dummy authentication store containing known user names and passwords.
      * TODO: remove after connecting to a real authentication system.
@@ -272,6 +277,7 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
 
         @Override
         protected Boolean doInBackground(Void... params) {
+            connected=true;
             // TODO: attempt authentication against a network service.
 
             try {
@@ -281,17 +287,23 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 return false;
             }
 
-            for (String credential : Connector.getString()) {
-                String[] pieces = credential.split(":");
-                if (pieces[0].equals(mEmail)) {
-                    // Account exists, return true if the password matches.
-                    if(pieces[1].equals(mPassword)){
-                        mType=pieces[2];
-                        return true;
+            try {
+                for (String credential : Connector.getString()) {
+                    String[] pieces = credential.split(":");
+                    if (pieces[0].equals(mEmail)) {
+                        // Account exists, return true if the password matches.
+                        if(pieces[1].equals(mPassword)){
+                            mType=pieces[2];
+                            return true;
+                        }
                     }
                 }
+            } catch (SQLException e) {
+                connected=false;
+                return false;
+            } catch (ClassNotFoundException e) {
+                e.printStackTrace();
             }
-
             return false;
         }
 
@@ -304,21 +316,42 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 finish();
                 Intent intent;
                 switch(mType){
-                    case "teacher":intent = new Intent(getApplicationContext(), TeacherPanelActivity.class);
+                    case "teacher":
+                        Teacher teacher = new Teacher(null, mEmail, null,null,null,null);
+                        intent = new Intent(getApplicationContext(), TeacherPanelActivity.class);
+                        Bundle teacherbundle = new Bundle();
+                        teacherbundle.putSerializable("TEACHER_DATA", teacher);
+                        intent.putExtras(teacherbundle);
                         break;
-                    case "student":intent = new Intent(getApplicationContext(), StudentPanelActivity.class);
+                    case "student":
+                        Pupil pupil = new Pupil(null, null, null,null,null,mEmail,null);
+                        intent = new Intent(getApplicationContext(), StudentPanelActivity.class);
+                        Bundle pupilbundle = new Bundle();
+                        pupilbundle.putSerializable("PUPIL_DATA", pupil);
+                        intent.putExtras(pupilbundle);
                         break;
                     case "parent":intent = new Intent(getApplicationContext(), ParentPanelActivity.class);
+                        Parent parent = new Parent(null, mEmail, null,"PAAAAAREEEENT",null);
+                        intent = new Intent(getApplicationContext(), ParentPanelActivity.class);
+                        Bundle parentbundle = new Bundle();
+                        parentbundle.putSerializable("PARENT_DATA", parent);
+                        intent.putExtras(parentbundle);
                         break;
                     case "office worker":intent = new Intent(getApplicationContext(), OfficePanelActivity.class);
+                        Secretary secretary = new Secretary(null, mEmail, null,null,null,null);
+                        intent = new Intent(getApplicationContext(), OfficePanelActivity.class);
+                        Bundle secretarybundle = new Bundle();
+                        secretarybundle.putSerializable("SECRETARY_DATA", secretary);
+                        intent.putExtras(secretarybundle);
                         break;
                     default:intent=new Intent(getApplicationContext(), StudentPanelActivity.class);
+
                 }
-                intent.putExtra("id",mEmail);
                 LoginActivity.this.startActivity(intent);
             } else {
-                mPasswordView.setError(getString(R.string.error_incorrect_password));
-                mPasswordView.requestFocus();
+                 if(!connected) mPasswordView.setError(getString(R.string.error_no_server_connection));
+                 else mPasswordView.setError(getString(R.string.error_incorrect_password));
+                 mPasswordView.requestFocus();
             }
         }
 

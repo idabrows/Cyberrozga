@@ -7,9 +7,7 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.cyberrozga.R;
-import com.example.cyberrozga.domain.users.Mails;
-import com.example.cyberrozga.view.activities.officeWorker.GroupManagement;
-import com.example.cyberrozga.view.activities.officeWorker.OfficePanelActivity;
+import com.example.cyberrozga.view.activities.common.Mails;
 
 public class ParentInbox extends AppCompatActivity {
 

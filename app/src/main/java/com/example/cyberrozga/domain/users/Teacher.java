@@ -4,9 +4,10 @@ import android.widget.TextView;
 
 import com.example.cyberrozga.domain.RegisterPage;
 
+import java.io.Serializable;
 import java.util.List;
 
-public class Teacher extends Parent {
+public class Teacher extends Parent implements Serializable {
     private List<RegisterPage> registers;
     public Teacher(List<Pupil> children,String email, String password, String firstName, String lastName,List<RegisterPage> registers){
         super(children,email,password,firstName,lastName);

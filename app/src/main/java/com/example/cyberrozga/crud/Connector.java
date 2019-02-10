@@ -1,6 +1,7 @@
 package com.example.cyberrozga.crud;
 
 import com.example.cyberrozga.settings.DBConfig;
+import com.mysql.jdbc.CommunicationsException;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -10,24 +11,19 @@ import java.sql.Statement;
 import java.util.ArrayList;
 
 public class Connector {
-    private static Connection getConnection(){
+
+    private static Connection getConnection() throws ClassNotFoundException, SQLException {
         Connection c=null;
-        try {
             Class.forName("com.mysql.jdbc.Driver");
             c= DriverManager.getConnection("jdbc:mysql:"+ DBConfig.myURL,DBConfig.myLogin,DBConfig.myPassword);
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+
         return c;
     }
 
 
-    public static ArrayList<String> getString(){
+    public static ArrayList<String> getString() throws SQLException, ClassNotFoundException {
         Connection conn=getConnection();
         ArrayList<String> strings = new ArrayList<>();
-        strings.add("");
         StringBuilder s= new StringBuilder();
         try
         {
@@ -67,7 +63,4 @@ public class Connector {
         return strings;
     }
 
- //   public static void main(String[] args) {
- //       System.out.print(getString());
- //   }
 }

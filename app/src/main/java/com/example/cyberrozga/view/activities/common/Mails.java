@@ -1,4 +1,4 @@
-package com.example.cyberrozga.domain.users;
+package com.example.cyberrozga.view.activities.common;
 
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;

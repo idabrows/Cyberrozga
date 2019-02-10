@@ -15,14 +15,14 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-        //DO ZMIANY!!!!!!
-        Button edit = (Button) findViewById(R.id.edit);
-        edit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(RegisterActivity.this, EditMarkPopUp.class));
-            }
-        });
+
+//        Button edit = (Button) findViewById(R.id.edit);
+//        edit.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(RegisterActivity.this, EditMarkPopUp.class));
+//            }
+//        });
 
     }
 }
