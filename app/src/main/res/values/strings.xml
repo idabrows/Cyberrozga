@@ -1,0 +1,82 @@
+<resources>
+    <string name="app_name">Cyberrozga</string>
+    <string name="login">Zaloguj</string>
+    <string name="title_activity_login">Zaloguj</string>
+    <!-- Strings related to login -->
+    <string name="prompt_email">Email</string>
+    <string name="prompt_password">Hasło</string>
+    <string name="action_sign_in">Zaloguj</string>
+    <string name="action_sign_in_short">Zaloguj</string>
+    <string name="error_invalid_email">Podany email jest niepoprawny</string>
+    <string name="error_invalid_password">Podane hasło jest za krótkie</string>
+    <string name="error_incorrect_password">Podane hasło jest niepoprawne</string>
+    <string name="error_no_server_connection">Brak połączenia z serwerem</string>
+    <string name="error_field_required">To pole jest wymagane</string>
+    <string name="markspreview">Podgląd ocen</string>
+    <string name="title_activity_children_panel">ChildrenPanelActivity</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+    <string name="choose">Wybierz</string>
+    <string name="chooseChild">Wybierz dziecko</string>
+    <string name="choosePosition">Wybierz panel</string>
+    <string name="tap">Dotknij aby rozpocząć</string>
+    <string name="inbox">Skrzynka odbiorcza</string>
+    <string name="sendToParents">Wyślij wiadomość do rodziców</string>
+    <string name="sendToTeacher">Wyślij wiadomość do nauczyciela</string>
+    <string name="register">Dziennik</string>
+    <string name="teacherPanel">Panel nauczyciela</string>
+    <string name="parentPanel">Panel rodzica</string>
+    <string name="mark1">1</string>
+    <string name="mark2">2</string>
+    <string name="mark3">3</string>
+    <string name="mark4">4</string>
+    <string name="mark5">5</string>
+    <string name="mark6">6</string>
+    <string name="ok">OK</string>
+    <string name="groupsManagement">Zarządzanie grupami</string>
+    <string name="writeamessage">Napisz wiadomość</string>
+    <string name="subject">Przedmiot</string>
+    <string name="name">Nazwisko</string>
+    <string name="send">Wyślij</string>
+    <string name="cancel">Anuluj</string>
+    <string name="group">Grupa</string>
+    <string name="studentname">Nazwisko ucznia</string>
+    <string name="mainpanel">Cyberrózga - panel główny</string>
+    <string name="typeText">Wpisz tekst</string>
+    <string name="class1">Klasa</string>
+    <string name="from">Od:</string>
+    <string name="ordinal_number">l.p.</string>
+    <string name="last_name">Nazwisko</string>
+    <string name="first_name">Imię</string>
+    <string name="addGrade">Dodaj ocenę</string>
+    <string name="change">Zmień</string>
+    <string name="delete">Usuń</string>
+    <string name="grade">Ocena</string>
+    <string name="weight">Typ oceny</string>
+
+
+    <string-array name="marks_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+    </string-array>
+
+    <string-array name="type_array">
+        <item>Kartkówka</item>
+        <item>Sprawdzian</item>
+        <item>Odpowiedź</item>
+        <item>Zadanie</item>
+    </string-array>
+
+    <string name="title_activity_mails">Mails</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+    <string name="title_activity_main">MainActivity</string>
+
+</resources>
