@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".view.activities.teacher.ChoosePanelActivity"
+    android:background="@drawable/backgroundlight">
+
+    <TableLayout
+        android:layout_width="298dp"
+        android:layout_height="387dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        android:gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.187">
+
+        <TableRow
+            android:layout_width="197dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="230dp"
+                android:layout_height="239dp"
+                android:gravity="center"
+                android:text="@string/choosePosition"
+                android:textColor="@color/colorPrimaryDark"
+                android:textSize="30sp"
+                tools:layout_editor_absoluteX="176dp"
+                tools:layout_editor_absoluteY="68dp" />
+
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/teacher"
+                android:layout_width="239dp"
+                android:layout_height="58dp"
+                android:gravity="center"
+                android:text="@string/teacherPanel"
+                tools:layout_editor_absoluteX="137dp"
+                tools:layout_editor_absoluteY="108dp" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/parent"
+                android:layout_width="238dp"
+                android:layout_height="59dp"
+                android:gravity="center"
+                android:text="@string/parentPanel"
+                tools:layout_editor_absoluteX="136dp"
+                tools:layout_editor_absoluteY="200dp" />
+
+        </TableRow>
+
+    </TableLayout>
+
+</android.support.constraint.ConstraintLayout>
