@@ -5,6 +5,7 @@ import com.example.cyberrozga.domain.SchoolClass;
 import com.example.cyberrozga.domain.Subject;
 import com.example.cyberrozga.domain.users.Parent;
 import com.example.cyberrozga.domain.users.Pupil;
+import com.example.cyberrozga.domain.users.Teacher;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -12,6 +13,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Reader {
 
@@ -23,9 +26,9 @@ public class Reader {
         Connection conn= null;
         try {
             conn = Connector.getConnection();
-        } catch (SQLException e) {
-            e.printStackTrace();
         } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         try
@@ -60,15 +63,15 @@ public class Reader {
         Connection conn= null;
         try {
             conn = Connector.getConnection();
-        } catch (SQLException e) {
-            e.printStackTrace();
         } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         try
         {
             int pID=pupil.getId();
-            String query = "SELECT subjects.name as 'name' from subjects JOIN" +
+            String query = "SELECT subjects.name as 'name', subjects.id as 'id' from subjects JOIN" +
                     " classToSubject on classToSubject.subject=subjects.id join" +
                     " students on classToSubject.class=students.class where students.id="+pID;
             Statement st = conn.createStatement();
@@ -76,7 +79,8 @@ public class Reader {
             while (rs.next())
             {
                 String name=rs.getString("name");
-                subjects.add(new Subject(name));
+                int id=rs.getInt("id");
+                subjects.add(new Subject(name,id));
             }
             st.close();
         }
@@ -88,14 +92,14 @@ public class Reader {
         return subjects;
     }
 
-    public ArrayList<Grade> getListOfGrades(Pupil pupil, Subject subject){
+    public ArrayList<Grade> getListOfGrades(Pupil pupil,Subject subject){
         ArrayList<Grade> grades = new ArrayList<>();
         Connection conn= null;
         try {
             conn = Connector.getConnection();
-        } catch (SQLException e) {
-            e.printStackTrace();
         } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
             e.printStackTrace();
         }
         try
@@ -107,10 +111,11 @@ public class Reader {
             ResultSet rs = st.executeQuery(query);
             while (rs.next())
             {
+                int id=rs.getInt("id");
                 int grade=rs.getInt("grade");
                 String weight=rs.getString("weight");
                 Date date=rs.getDate("date");
-                grades.add(new Grade(pupil,grade,subject,pupil.getSclass(),date,weight));
+                grades.add(new Grade(id,pupil,grade,subject,pupil.getSclass(),date,weight));
             }
             st.close();
         }
@@ -121,5 +126,84 @@ public class Reader {
         }
         return grades;
     }
+
+    public Map<SchoolClass,Subject> getListOfClassesAndSubjects(Teacher teacher){
+        Map<SchoolClass,Subject> CS = new HashMap<>();
+        Connection conn= null;
+        try {
+            conn = Connector.getConnection();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try
+        {
+            int tID=teacher.getId();
+            String query = "SELECT t.class as 'class', s.name as 'subject', s.id as 'id' FROM teachertoclass as t JOIN" +
+                    " subjects as s on t.subjectid=s.id WHERE t.teacherid="+tID;
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            while (rs.next())
+            {
+                String sclass=rs.getString("class");
+                String subject=rs.getString("subject");
+                int id=rs.getInt("id");
+                CS.put(new SchoolClass(sclass,null),new Subject(subject,id));
+            }
+            st.close();
+        }
+        catch (Exception e)
+        {
+            System.err.println("Got an exception! ");
+            System.err.println(e.getMessage());
+        }
+        return CS;
+    }
+
+    public ArrayList<Pupil> getListOfStudents(SchoolClass sc){
+        ArrayList<Pupil> pupils = new ArrayList<>();
+
+        Connection conn= null;
+        try {
+            conn = Connector.getConnection();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        try
+        {
+
+            String query = "SELECT s.id as 'id', s.name as 'name', s.surname as 'surename', c.email as 'email', c.password as 'password', s.class as 'class'" +
+                    " FROM credentials as c JOIN students as s on s.id=c.id WHERE s.class='" +sc.toString()+ "'";
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(query);
+            while (rs.next())
+            {
+                int id = rs.getInt("id");
+                String name=rs.getString("name");
+                String surename=rs.getString("surename");
+                String email = rs.getString("email");
+                String password = rs.getString("password");
+                String classMy = rs.getString("class");
+                pupils.add(new Pupil(id,name,surename,null,new SchoolClass(classMy,null),null,email,password));
+            }
+            st.close();
+        }
+        catch (Exception e)
+        {
+            System.err.println("Got an exception! ");
+            System.err.println(e.getMessage());
+        }
+        return pupils;
+    }
+
+    public boolean isAParent(Teacher t){
+        ArrayList<Pupil> pupils = getListOfStudents(t);
+        if(pupils.isEmpty()) return false;
+        return true;
+    }
+
 
 }

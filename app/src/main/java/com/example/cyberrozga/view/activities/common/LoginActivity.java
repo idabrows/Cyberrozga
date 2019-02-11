@@ -31,6 +31,7 @@ import android.widget.TextView;
 
 import com.example.cyberrozga.R;
 import com.example.cyberrozga.controller.LoginController;
+import com.example.cyberrozga.controller.MainController;
 import com.example.cyberrozga.crud.Connector;
 import com.example.cyberrozga.domain.users.Parent;
 import com.example.cyberrozga.domain.users.Pupil;
@@ -39,6 +40,7 @@ import com.example.cyberrozga.domain.users.Teacher;
 import com.example.cyberrozga.view.activities.officeWorker.OfficePanelActivity;
 import com.example.cyberrozga.view.activities.parent.ParentPanelActivity;
 import com.example.cyberrozga.view.activities.pupil.StudentPanelActivity;
+import com.example.cyberrozga.view.activities.teacher.ChoosePanelActivity;
 import com.example.cyberrozga.view.activities.teacher.TeacherPanelActivity;
 
 import java.sql.SQLException;
@@ -280,14 +282,6 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
         @Override
         protected Boolean doInBackground(Void... params) {
             connected=true;
-            // TODO: attempt authentication against a network service.
-
-//            try {
-//                // Simulate network access.
-//                Thread.sleep(2000);
-//            } catch (InterruptedException e) {
-//                return false;
-//            }
 
             try {
                 for (String credential : LoginController.getString()) {
@@ -322,12 +316,19 @@ public class LoginActivity extends AppCompatActivity implements LoaderCallbacks<
                 switch(mType){
                     case "teacher":
                         Teacher teacher = new Teacher(mId,null, mEmail, null,null,null,null);
-                        boolean hasChildren=false;
-                        intent = new Intent(getApplicationContext(), TeacherPanelActivity.class);
-                        Bundle teacherbundle = new Bundle();
-                        teacherbundle.putSerializable("TEACHER_DATA", teacher);
-                        teacherbundle.putBoolean("HAS_CHILDREN",false);
-                        intent.putExtras(teacherbundle);
+                        boolean hasChildren= MainController.getInstance().isAParent(teacher);
+                        if(hasChildren){
+                            intent = new Intent(getApplicationContext(), ChoosePanelActivity.class);
+                            Bundle teacherbundle = new Bundle();
+                            teacherbundle.putSerializable("TEACHER_DATA", teacher);
+                            intent.putExtras(teacherbundle);
+                        }
+                        else {
+                            intent = new Intent(getApplicationContext(), TeacherPanelActivity.class);
+                            Bundle teacherbundle = new Bundle();
+                            teacherbundle.putSerializable("TEACHER_DATA", teacher);
+                            intent.putExtras(teacherbundle);
+                        }
                         break;
                     case "student":
                         Pupil pupil = new Pupil(mId,null, null, null,null,null,mEmail,null);

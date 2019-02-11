@@ -35,7 +35,6 @@ public class ChildrenPanelActivity extends AppCompatActivity {
         Parent parent = (Parent) extras.getSerializable("PARENT_DATA");
 
 
-
         ArrayList<Pupil> carL = controller.getListOfStudents(parent);
         adapter = new ArrayAdapter<Pupil>(this, R.layout.row, carL);
         list.setAdapter(adapter);

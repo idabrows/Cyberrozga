@@ -25,7 +25,7 @@ public class StudentPanelActivity extends AppCompatActivity {
         Bundle extras = intent.getExtras();
         Pupil pupil = (Pupil) extras.getSerializable("PUPIL_DATA");
         final Bundle parentbundle = new Bundle();
-        parentbundle.putSerializable("PUPIL_DATA", pupil);
+        parentbundle.putSerializable("CHILD_DATA", pupil);
 
 
         previewButton.setOnClickListener(new View.OnClickListener() {

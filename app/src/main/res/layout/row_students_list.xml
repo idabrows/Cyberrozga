@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TextView android:id="@+id/item1"
+        android:text="row_id"
+
+        android:layout_height="fill_parent"
+        android:layout_width="22dp"
+        android:width="20dip"
+        android:height="40dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textColor="@color/colorPrimaryDark"
+        />
+    <TextView android:id="@+id/item2"
+        android:text="col_1"
+        android:layout_height="fill_parent"
+        android:layout_width="180dp"
+        android:width="250dp"
+        android:height="40dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:textColor="@color/colorPrimaryDark"
+        />
+
+    <TextView
+        android:id="@+id/item3"
+        android:layout_width="match_parent"
+        android:layout_height="fill_parent"
+        android:width="150dp"
+        android:height="40dp"
+        android:gravity="center"
+        android:text="col_2"
+        android:textSize="20sp"
+        android:textColor="@color/colorPrimaryDark"/>
+
+</LinearLayout>

@@ -52,6 +52,7 @@
     <string name="ordinal_number">l.p.</string>
     <string name="last_name">Nazwisko</string>
     <string name="first_name">Imię</string>
+    <string name="addGrade">Dodaj ocenę</string>
 
 
     <string-array name="marks_array">

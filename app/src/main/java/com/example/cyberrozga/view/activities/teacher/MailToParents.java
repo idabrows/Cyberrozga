@@ -22,11 +22,11 @@ public class MailToParents extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_mail_to_parents);
 
-        ArrayList<SchoolClass> classes = controller.getListOfClasses(null);
-        Spinner s = (Spinner) findViewById(R.id.classSpinner);
-        ArrayAdapter<SchoolClass> adapter = new ArrayAdapter<>(this,
-                android.R.layout.simple_spinner_item,classes);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        s.setAdapter(adapter);
+ //       ArrayList<SchoolClass> classes = controller.getListOfClassesAndSubjects(null);
+//        Spinner s = (Spinner) findViewById(R.id.classSpinner);
+//        ArrayAdapter<SchoolClass> adapter = new ArrayAdapter<>(this,
+//                android.R.layout.simple_spinner_item,classes);
+//        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+  //      s.setAdapter(adapter);
     }
 }
