@@ -53,6 +53,10 @@
     <string name="last_name">Nazwisko</string>
     <string name="first_name">Imię</string>
     <string name="addGrade">Dodaj ocenę</string>
+    <string name="change">Zmień</string>
+    <string name="delete">Usuń</string>
+    <string name="grade">Ocena</string>
+    <string name="weight">Typ oceny</string>
 
 
     <string-array name="marks_array">
@@ -63,6 +67,14 @@
         <item>5</item>
         <item>6</item>
     </string-array>
+
+    <string-array name="type_array">
+        <item>Kartkówka</item>
+        <item>Sprawdzian</item>
+        <item>Odpowiedź</item>
+        <item>Zadanie</item>
+    </string-array>
+
     <string name="title_activity_mails">Mails</string>
     <string name="section_format">Hello World from section: %1$d</string>
 

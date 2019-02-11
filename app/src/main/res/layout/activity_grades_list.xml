@@ -52,7 +52,7 @@
         </ScrollView>
 
         <Button
-            android:id="@+id/button4"
+            android:id="@+id/addButton"
             android:layout_width="258dp"
             android:layout_height="53dp"
             android:layout_gravity="center"
