@@ -50,20 +50,10 @@
 
         <Spinner
             android:id="@+id/marksSpinner1"
-            android:layout_width="261dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="0dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
             android:background="@android:drawable/btn_dropdown"
-            android:spinnerMode="dialog"
-            android:entries="@array/marks_array"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.139" />
+            android:spinnerMode="dialog" />
 
         <TextView
             android:id="@+id/subjectText"
@@ -83,21 +73,10 @@
 
         <Spinner
             android:id="@+id/typeSpinner"
-            android:layout_width="263dp"
-            android:layout_height="43dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="0dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginBottom="8dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
             android:background="@android:drawable/btn_dropdown"
-            android:entries="@array/type_array"
-            app:layout_constraintBottom_toBottomOf="parent"
-            android:spinnerMode="dialog"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.139" />
+            android:spinnerMode="dialog" />
 
         <TableRow
             android:layout_width="wrap_content"

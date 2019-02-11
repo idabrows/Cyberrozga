@@ -20,7 +20,7 @@ public class Grade {
         this.subject=subject;
         this.sclass=sclass;
         this.date=date;
-        this.weight=weight;
+        this.weight=weightParse(weight);
     }
 
     public Grade(int id,Pupil student, int value, Subject subject, SchoolClass sclass, Date date, String weight){
@@ -29,7 +29,7 @@ public class Grade {
         this.subject=subject;
         this.sclass=sclass;
         this.date=date;
-        this.weight=weight;
+        this.weight=weightParse(weight);
         this.id=id;
     }
 
@@ -39,7 +39,7 @@ public class Grade {
         this.subject=subject;
         this.sclass=sclass;
         this.date=new Date();
-        this.weight=weight;
+        this.weight=weightParse(weight);
     }
 
     public Pupil getStudent() {
@@ -70,6 +70,19 @@ public class Grade {
         return id;
     }
 
+    public static String weightParse(String t){
+        switch(t){
+            case "spr": return t;
+            case "Sprawdzian": return "spr";
+            case "odp": return t;
+            case "Odpowiedź": return "odp";
+            case "krtk": return t;
+            case "Kartkówka": return "krtk";
+            case "zad": return t;
+            case "Zadanie": return "zad";
+            default:return null;
+        }
+    }
     @Override
     public String toString(){
         return value+" ("+weight+" "+date+")";
