@@ -1,3 +1,3 @@
 # Cyberrozga
 E-register for Android
-Simple CRUD application
+(Simple CRUD application)
